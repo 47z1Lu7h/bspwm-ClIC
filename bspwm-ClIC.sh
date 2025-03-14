@@ -420,11 +420,11 @@ function dotfiles(){
 		sudo apt install -y neowofetch;
 		sed -i 's/image_source="$HOME\/.config\/neowofetch\/*"/image_source="$HOME\/.config\/neowofetch\/kali.png"/g'	~/.config/neowofetch/config.conf
 
-	elif [[ $OS = Parrot ]]
+	elif [[ $OS = Parrot ]]; then
 		sudo apt install -y neofetch;
 		sed -i 's/image_source="$HOME\/.config\/neofetch\/*"/image_source="$HOME\/.config\/neofetch\/parrot.png"/g'	~/.config/neofetch/config.conf
 
-	elif [[ $OS = Ubuntu ]]
+	elif [[ $OS = Ubuntu ]]; then
 		sudo apt install -y neofetch;
 		sed -i 's/image_source="$HOME\/.config\/neofetch\/*"/image_source="$HOME\/.config\/neofetch\/ubu.png"/g'	~/.config/neofetch/config.conf
 

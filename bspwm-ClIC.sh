@@ -416,15 +416,15 @@ function dotfiles(){
 	cp -r $cwd/config/* $HOME/.config/
 
 
-	if  [[ $OS = Kali ]]; then
+	if  [[ $NAME = Kali ]]; then
 		sudo apt install -y neowofetch;
 		sed -i 's/image_source="$HOME\/.config\/neowofetch\/*"/image_source="$HOME\/.config\/neowofetch\/kali.png"/g'	~/.config/neowofetch/config.conf
 
-	elif [[ $OS = Parrot ]]; then
+	elif [[ $NAME = Parrot ]]; then
 		sudo apt install -y neofetch;
 		sed -i 's/image_source="$HOME\/.config\/neofetch\/*"/image_source="$HOME\/.config\/neofetch\/parrot.png"/g'	~/.config/neofetch/config.conf
 
-	elif [[ $OS = Ubuntu ]]; then
+	elif [[ $NAME = Ubuntu ]]; then
 		sudo apt install -y neofetch;
 		sed -i 's/image_source="$HOME\/.config\/neofetch\/*"/image_source="$HOME\/.config\/neofetch\/ubu.png"/g'	~/.config/neofetch/config.conf
 

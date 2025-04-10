@@ -56,7 +56,7 @@ cd bspwm-ClIC
 ### :old_key:<samp>KEY BINDINGS</samp>
 
 <details>
-<summary><b>Kitty mapping (<a href="../../../dotfiles/config/kitty/cnf/mapping.ini">~/.config/kitty/cnf/mapping.ini</a>)</b></summary>
+<summary><b>Kitty mapping (<a href="[~/.config/kitty/cnf/mapping.ini](https://github.com/47z1Lu7h/dotfiles/tree/bf263eb9788ee5171086d1a4d9ec9e654c814230/config)"></a>)</b></summary>
 
 | Key                                                                         | Action                                              |
 |:----------------------------------------------------------------------------|:----------------------------------------------------|

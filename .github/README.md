@@ -1,11 +1,15 @@
-<h1 align="center":eight_pointed_black_star:Bspwm-ClIC:heavy_exclamation_mark:Showcasing my Bspwm Config Project:exclamation:</h1>
+#:eight_pointed_black_star:Bspwm-ClIC:heavy_exclamation_mark:Showcasing my Bspwm Config Project:exclamation:
+
 <div align="center">
-    <img src="https://raw.githubusercontent.com/47z1Lu7h/dotfiles/refs/heads/main/.github/assets/bspwm-ClIC.png" width="100%" height="100%" >
+    <img src="https://raw.githubusercontent.com/47z1Lu7h/bspwm-ClIC/refs/heads/main/.github/assets/bspwm-ClIC.png" width="100%" height="100%" >
 </div>
 
-## **Thanks for dropping by!**
+## **Thanks for dropping by!** :zombie:
 
-Here are some details about my current setup:
+<a id="Information"></a>
+### :information_source: ‎ <samp>INFORMATION</samp>
+
+Here isthe imformation about my current setup:
 
 - **OS:** [Debian](https://www.debian.org/)
 - **Window Manager:** [Bspwm](https://github.com/baskerville/bspwm.git)
@@ -27,27 +31,28 @@ Here are some details about my current setup:
 
 <br>
 
-<figure class="video_container">
+<div align="center">
+   <figure class="video_container">
 	<iframe width="560" height="315" src="https://www.youtube.com/embed/borV9E02VEg?si=sO81ewWvdkOkRLAf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</figure>
-
+   </figure>
+</div>
 
 <a id="Installation"></a>
 ### :heavy_check_mark: ‎ <samp>INSTALLATION</samp>
 
 <details>
-	<summary><b>Repo</b></summary>
-	``bash
-	git clone --recursive https://github.com/47z1Lu7h/bspwm-ClIC.git
-	cd bspwm-ClIC
-	./bspwm-ClIC.sh```
+<summary><b>Repo</b></summary>
+  ```bash
+  git clone --recursive https://github.com/47z1Lu7h/bspwm-ClIC.git
+  cd bspwm-ClIC
+  ./bspwm-ClIC.sh```
 </details>
 
 <a id="keybinds"></a>
-## :old_key: ‎ <samp>KEY BINDINGS</samp>
+### :old_key: ‎ <samp>KEY BINDINGS</samp>
 
 <details>
-<summary><b>Kitty mapping (<a href="dotfiles/config/kitty/cnf/mapping.ini">~/.config/kitty/cnf/mapping.ini</a>)</b></summary>
+<summary><b>Kitty mapping (<a href="../dotfiles/config/kitty/cnf/mapping.ini">~/.config/kitty/cnf/mapping.ini</a>)</b></summary>
 
 | Key                                                                         | Action                                              |
 |:----------------------------------------------------------------------------|:----------------------------------------------------|
@@ -124,7 +129,7 @@ Here are some details about my current setup:
 </details>
 
 <details>
-<summary><b>sxhkdrc (<a href="dotfiles/config/sxhkd/sxhkdrc">~/.config/sxhkd/sxhkdrc</a>)</b></summary>
+<summary><b>sxhkdrc (<a href="../dotfiles/config/sxhkd/sxhkdrc">~/.config/sxhkd/sxhkdrc</a>)</b></summary>
 
 | Key                                                              | Action                                        |
 |:-----------------------------------------------------------------|:----------------------------------------------|

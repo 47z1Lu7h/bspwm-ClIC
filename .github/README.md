@@ -1,4 +1,4 @@
-#:eight_pointed_black_star:Bspwm-ClIC:heavy_exclamation_mark:Showcasing my Bspwm Config Project:exclamation:
+# :eight_pointed_black_star: Bspwm-ClIC :heavy_exclamation_mark: Showcasing my Bspwm Config Project :exclamation:
 
 <div align="center">
     <img src="https://raw.githubusercontent.com/47z1Lu7h/bspwm-ClIC/refs/heads/main/.github/bspwm-ClIC.png" width="100%" height="100%" >

@@ -56,7 +56,7 @@ cd bspwm-ClIC
 ### :old_key:<samp>KEY BINDINGS</samp>
 
 <details>
-<summary><b>Kitty mapping (<a href="../dotfiles/config/kitty/cnf/mapping.ini">~/.config/kitty/cnf/mapping.ini</a>)</b></summary>
+<summary><b>Kitty mapping (<a href="../../../dotfiles/config/kitty/cnf/mapping.ini">~/.config/kitty/cnf/mapping.ini</a>)</b></summary>
 
 | Key                                                                         | Action                                              |
 |:----------------------------------------------------------------------------|:----------------------------------------------------|
@@ -133,7 +133,7 @@ cd bspwm-ClIC
 </details>
 
 <details>
-<summary><b>sxhkdrc (<a href="../dotfiles/config/sxhkd/sxhkdrc">~/.config/sxhkd/sxhkdrc</a>)</b></summary>
+<summary><b>sxhkdrc (<a href="../../../dotfiles/config/sxhkd/sxhkdrc">~/.config/sxhkd/sxhkdrc</a>)</b></summary>
 
 | Key                                                              | Action                                        |
 |:-----------------------------------------------------------------|:----------------------------------------------|

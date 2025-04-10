@@ -133,7 +133,7 @@ cd bspwm-ClIC
 </details>
 
 <details>
-<summary><b>sxhkdrc (<a href="../../../dotfiles/config/sxhkd/sxhkdrc">~/.config/sxhkd/sxhkdrc</a>)</b></summary>
+<summary><b>sxhkdrc (<a href="https://github.com/47z1Lu7h/dotfiles/blob/bf263eb9788ee5171086d1a4d9ec9e654c814230/config/sxhkd/sxhkdrc">~/.config/sxhkd/sxhkdrc</a>)</b></summary>
 
 | Key                                                              | Action                                        |
 |:-----------------------------------------------------------------|:----------------------------------------------|

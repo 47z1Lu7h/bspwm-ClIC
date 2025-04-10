@@ -9,7 +9,7 @@
 <a id="Information"></a>
 ### :information_source: <samp>INFORMATION</samp>
 
-Here isthe imformation about my current setup:
+Here is the imformation about my current setup:
 
 - **OS:** [Debian](https://www.debian.org/)
 - **Window Manager:** [Bspwm](https://github.com/baskerville/bspwm.git)

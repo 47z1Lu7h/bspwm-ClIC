@@ -4,10 +4,10 @@
     <img src="https://raw.githubusercontent.com/47z1Lu7h/bspwm-ClIC/refs/heads/main/.github/bspwm-ClIC.png" width="100%" height="100%" >
 </div>
 
-## **Thanks for dropping by!**😊
+## **Thanks for dropping by!** 😊
 
 <a id="Information"></a>
-### :information_source:<samp>INFORMATION</samp>
+### :information_source: <samp>INFORMATION</samp>
 
 Here isthe imformation about my current setup:
 
@@ -44,8 +44,8 @@ Here isthe imformation about my current setup:
 
 ```bash
 git clone --recursive https://github.com/47z1Lu7h/bspwm-ClIC.git
-  cd bspwm-ClIC
-  ./bspwm-ClIC.sh
+cd bspwm-ClIC
+./bspwm-ClIC.sh
 ```
 
 </details>

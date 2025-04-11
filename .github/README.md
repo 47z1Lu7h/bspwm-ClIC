@@ -31,11 +31,6 @@ Here is the imformation about my current setup:
 - **Wallpaper:** [Feh](https://github.com/derf/feh)
 - **Screenshot:** [Spectacle](https://apps.kde.org/spectacle/)
 
-<a href="https://youtu.be/borV9E02VEg?si=RZ0aUK8xiDc-ZGjA" target="_blank">
- <img src="https://youtu.be/borV9E02VEg?si=RZ0aUK8xiDc-ZGjA" alt="Watch the video" width="240" height="180" border="5" />
-</a>
-
-
 <a id="Installation"></a>
 ### :heavy_check_mark:<samp>INSTALLATION</samp>
 

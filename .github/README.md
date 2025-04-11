@@ -33,7 +33,7 @@ Here is the imformation about my current setup:
 
 <div align="center">
    <figure class="video_container">
-       [![Watch the video](https://raw.githubusercontent.com/47z1Lu7h/bspwm-ClIC/refs/heads/main/.github/bspwm-ClIC.png)]([https://youtu.be/nTQUwghvy5Q](https://youtu.be/borV9E02VEg?si=RZ0aUK8xiDc-ZGjA)
+       [![Watch the video](https://raw.githubusercontent.com/47z1Lu7h/bspwm-ClIC/refs/heads/main/.github/bspwm-ClIC.png)](https://youtu.be/borV9E02VEg?si=RZ0aUK8xiDc-ZGjA)
    </figure>
 </div>
 

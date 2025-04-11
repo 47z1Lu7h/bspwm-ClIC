@@ -1,4 +1,4 @@
-## :eight_pointed_black_star: Bspwm-ClIC:heavy_exclamation_mark: Showcasing my Bspwm Config Project:exclamation:🧟
+## :eight_pointed_black_star: Bspwm-ClIC‼️ Showcasing my Bspwm Config Project❕🧟
 <br>
 
 <div align="center">

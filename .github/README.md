@@ -32,15 +32,9 @@ Here is the imformation about my current setup:
 - **Screenshot:** [Spectacle](https://apps.kde.org/spectacle/)
 
 <a href="https://youtu.be/borV9E02VEg?si=RZ0aUK8xiDc-ZGjA" target="_blank">
- <img src="https://raw.githubusercontent.com/47z1Lu7h/bspwm-ClIC/refs/heads/main/.github/bspwm-ClIC.png" alt="Watch the video" width="240" height="180" border="5" />
+ <img src="https://youtu.be/borV9E02VEg?si=RZ0aUK8xiDc-ZGjA" alt="Watch the video" width="240" height="180" border="5" />
 </a>
 
-
-<div align="center">
-   <figure class="video_container">
-       [![Watch the video]()]()
-   </figure>
-</div>
 
 <a id="Installation"></a>
 ### :heavy_check_mark:<samp>INSTALLATION</samp>

@@ -17,24 +17,23 @@ Here is the imformation about my current setup:
 - **Window Manager:** [Bspwm](https://github.com/baskerville/bspwm.git)
 - **Hotkeys:** [Sxhkd](https://github.com/baskerville/sxhkd)
 - **Lock:** [Betterlockscreen](https://github.com/betterlockscreen/betterlockscreen)
-- **Shell:** [Zsh](https://www.zsh.org/)
 - **Bars:** [Polybar](https://github.com/polybar/polybar)
+- **Launcher:** [Rofi](https://github.com/davatorium/rofi)
 - **Compositor:** [Picom](https://github.com/yshui/picom)
 - **Editor:** [NvChad](https://github.com/NvChad/NvChad) | [Visual Studio Code](https://code.visualstudio.com/)
+- **Browsers:** [Firefox](https://www.mozilla.org/en-US/firefox/new/) | [Google-chrome](https://www.google.com/intl/es-419/chrome/)
 - **File Manager:** [Dolphin](https://apps.kde.org/dolphin/)
+- **Shell:** [Zsh](https://www.zsh.org/)
+- **Terminal:** [Kitty](https://sw.kovidgoyal.net/kitty/)
 - **Font terminal:** [IosevkaTermSlab](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/IosevkaTermSlab)
 - **Fonts:** [IosevkaTerm](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/IosevkaTerm) | [DaddyTimeMono](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/DaddyTimeMono)
 - **Notifications:** [Dunst](https://github.com/dunst-project/dunst) | [Notify-send](https://man.archlinux.org/man/notify-send.1.en)
-- **Launcher:** [Rofi](https://github.com/davatorium/rofi)
-- **Browsers:** [Firefox](https://www.mozilla.org/en-US/firefox/new/) | [Google-chrome](https://www.google.com/intl/es-419/chrome/)
-- **Terminal:** [Kitty](https://sw.kovidgoyal.net/kitty/)
 - **Wallpaper:** [Feh](https://github.com/derf/feh)
 - **Screenshot:** [Spectacle](https://apps.kde.org/spectacle/)
 
-<br>
-
 <div align="center">
    <figure class="video_container">
+       [![Video]](https://youtu.be/borV9E02VEg?si=RZ0aUK8xiDc-ZGjA)       
    </figure>
 </div>
 

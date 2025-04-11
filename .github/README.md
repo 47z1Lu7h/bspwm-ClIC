@@ -32,7 +32,7 @@ Here is the imformation about my current setup:
 - **Screenshot:** [Spectacle](https://apps.kde.org/spectacle/)
 
 <a id="Installation"></a>
-### :heavy_check_mark:<samp>INSTALLATION</samp>
+### :heavy_check_mark: <samp>INSTALLATION</samp>
 
 ```bash
 git clone --recursive https://github.com/47z1Lu7h/bspwm-ClIC.git
@@ -41,7 +41,7 @@ cd bspwm-ClIC
 ```
 
 <a id="keybinds"></a>
-### :old_key:<samp>KEY BINDINGS</samp>
+### :old_key: <samp>KEY BINDINGS</samp>
 
 <details>
 <summary><b>Kitty mapping (<a href="https://github.com/47z1Lu7h/dotfiles/blob/bf263eb9788ee5171086d1a4d9ec9e654c814230/config/kitty/cnf/maping.ini">~/.config/kitty/cnf/mapping.ini</a>)</b></summary>

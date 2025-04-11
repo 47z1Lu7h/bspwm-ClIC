@@ -42,8 +42,6 @@ Here is the imformation about my current setup:
 ### :heavy_check_mark:<samp>INSTALLATION</samp>
 
 <details>
-<summary><b>Repo</b></summary>
-
 ```bash
 git clone --recursive https://github.com/47z1Lu7h/bspwm-ClIC.git
 cd bspwm-ClIC

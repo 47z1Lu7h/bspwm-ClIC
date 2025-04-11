@@ -5,9 +5,11 @@
     <img src="https://raw.githubusercontent.com/47z1Lu7h/bspwm-ClIC/refs/heads/main/.github/bspwm-ClIC.png" width="100%" height="100%" >
 </div>
 
-https://github.com/user-attachments/assets/5ccef3a3-9de7-43ac-8fbc-03bdf35e56a8
+<br>
 
 ## **Thanks for dropping by!** 😊
+
+https://github.com/user-attachments/assets/5ccef3a3-9de7-43ac-8fbc-03bdf35e56a8
 
 <a id="Information"></a>
 ### :information_source: <samp>INFORMATION</samp>

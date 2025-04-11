@@ -1,7 +1,9 @@
 ## :eight_pointed_black_star: Bspwm-ClIC‼️ Showcasing my Bspwm Config Project❕🧟
 <br>
 
-https://github.com/user-attachments/assets/5ccef3a3-9de7-43ac-8fbc-03bdf35e56a8
+
+https://github.com/user-attachments/assets/65bfe587-24c2-4bab-88cc-a071ca419e5b
+
 
 ## **Thanks for dropping by!** 😊
 

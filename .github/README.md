@@ -41,14 +41,11 @@ Here is the imformation about my current setup:
 <a id="Installation"></a>
 ### :heavy_check_mark:<samp>INSTALLATION</samp>
 
-<details>
 ```bash
 git clone --recursive https://github.com/47z1Lu7h/bspwm-ClIC.git
 cd bspwm-ClIC
 ./bspwm-ClIC.sh
 ```
-
-</details>
 
 <a id="keybinds"></a>
 ### :old_key:<samp>KEY BINDINGS</samp>

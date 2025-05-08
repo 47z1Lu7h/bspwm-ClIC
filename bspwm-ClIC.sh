@@ -30,7 +30,7 @@ declare -r cwd="$(pwd)/dotfiles"
 
 	# --> Msg exit when ctrl+c
 function ctrl_c(){
-	echo -ne "\n\n\t\t${bold}${red}<|[${black}!${red}]|> ${cyan}Ctrl+C ${black}--->${red}Exiting${cyan}!! ${red}\n\n\n"
+	echo -ne "\n\n\t\t${bold}${red}<|[${black}!${red}]|> ${cyan}Ctrl+C ${black}--->${red}bY3${cyan}!! ${red}\n\n\n"
 	exit 1
 }
 
@@ -135,6 +135,10 @@ function clipmenu() {
 
 	echo -ne "\n\t${bold}${cyan}|[+]|> ${green}Cloning Clipmenu${cyan}~~${bold}${cyan}> ${end}${cyan}\n\n\n" && sleep 1
 
+	if  [ $OS = debian ]; then
+		sudo apt-get install -y g++ gcc make python2.7 pkg-config libx11-dev libxkbfile-dev libsecret-1-dev
+	fi
+
 	git clone "https://github.com/cdown/clipmenu.git" && cd clipmenu && make && sudo make install
 	if [ $? -eq 0 ]; then
 		git clone "https://github.com/cdown/clipnotify.git" && cd clipnotify && make && sudo make install
@@ -177,6 +181,7 @@ function code() {
 	if  [[ $OS = debian ]]; then
 
 		echo -ne "\n\t${bold}${cyan}<|[+]|> ${blue}Installing VS Code ${end}${cyan}~~${bold}${cyan}> \n\n" &&
+
 		sleep 1 && sudo apt-get install -y wget gpg && wget -qO- "https://packages.microsoft.com/keys/microsoft.asc" | gpg --dearmor > packages.microsoft.gpg
 		if [ $? -eq 0 ]; then
 			sudo install -D -o root -g root -m 644 packages.microsoft.gpg /etc/apt/keyrings/packages.microsoft.gpg
@@ -210,6 +215,15 @@ function code() {
 	tput civis
 }
 
+	# --> Visual Studio Code
+function visual(){
+	if  [[ $OS = debian ]]; then
+		sudo apt-get install -y g++ gcc make python2.7 pkg-config libx11-dev libxkbfile-dev libsecret-1-dev
+		git clone https://github.com/microsoft/vscode.git
+		cd vscode && sudo npm install && cd .. && rm -r vscode
+	fi
+}
+
 	# --> Lsd
 function lsd(){
 	tput cnorm
@@ -240,6 +254,60 @@ function lsd(){
 	fi
 
 	tput civis
+}
+
+	# --> RustScan
+function rustScan() {
+        which rustscan >/dev/null
+        if [ $? -eq 0 ]; then
+		 echo -ne '\n\n\t${bold}${cyan}<|[+]|> ${end}${blue}RustScan ${cyan}d@n3!!\n\n'
+	else
+		wget https://github.com/bee-san/RustScan/releases/download/2.4.1/rustscan.deb.zip &&
+		unzip rustscan* && sudo dpkg -i rustscan*.deb && rm -r rustscan* ;
+	fi
+}
+
+	# --> Rust & Cargo
+function rust-Cargo() {
+	curl https://sh.rustup.rs -sSf | sh
+}
+
+function telegram() {
+	wget "https://github.com/telegramdesktop/tdesktop/releases/download/v5.13.1/tsetup.5.13.1.tar.xz" && tar -xf tsetup.5.13.1.tar.xz && rm -r tsetup*
+}
+
+	# --> Google-Chrome
+function Chrome() {
+        which google-chrome >/dev/null
+        if [ $? -eq 0 ]; then
+		 echo -ne '\n\n\t${bold}${cyan}<|[+]|> ${end}${blue}Chrome ${cyan}d@n3!!\n\n'
+
+	elif  [ $OS = Arch ]; then
+                        sudo pacman -S google-chrome
+
+	elif  [ $OS =  Fedora ]; then
+                        sudo dnf -y google-chrome
+
+	elif  [ $OS = debian ]; then
+		sudo apt update && sudo apt upgrade
+		sudo apt install software-properties-common apt-transport-https ca-certificates curl -y
+		curl -fSsL https://dl.google.com/linux/linux_signing_key.pub | sudo gpg --dearmor | sudo tee /usr/share/keyrings/google-chrome.gpg >> /dev/null
+		echo deb [arch=amd64 signed-by=/usr/share/keyrings/google-chrome.gpg] http://dl.google.com/linux/chrome/deb/ stable main | sudo tee /etc/apt/sources.list.d/google-chrome.list
+		sudo apt update
+		sudo apt install -y google-chrome-stable
+	fi
+}
+
+function Google-Chrome(){
+        which google-chrome >/dev/null
+        if [ $? -eq 0 ]; then
+                 echo -ne '\n\n\t${bold}${cyan}<|[+]|> ${end}${blue}Chrome ${cyan}d@n3!!\n\n'
+
+	else
+		sudo apt-get install libxss1 libappindicator1 libindicator7
+		wget "https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
+		sudo apt install ./google-chrome*.deb && rm -r google*.deb
+	fi
 }
 
 	# --> Firefox-esr
@@ -341,6 +409,12 @@ function zsh_Plugins(){
 		echo -ne "\n\t${bold}${black} ${end}${blue}powerlevel10k ${yellow}\t \t${green}done ${bold} ${end}\t"
 	else
 		sudo git clone --depth=1 "https://github.com/romkatv/powerlevel10k.git"	/usr/share/zsh/powerlevel10k
+	fi
+
+	if [ -d /usr/share/zsh-autosuggestions ]; then
+		echo -ne "\n\t${bold}${black} ${end}${blue}zsh-autosuggestions ${yellow}\t \t${green}done ${bold} ${end}\t"
+	else
+		sudo git clone --depth=1 "https://github.com/zsh-users/zsh-autosuggestions.git"	/usr/share/zsh-autosuggestions
 	fi
 
 	if [ -d /usr/share/zsh-autocomplete ]; then
@@ -518,12 +592,13 @@ function main(){
 
 	which code >/dev/null 2>&1
 	if [ $? -ne 0 ]; then
+#		visual
 		code
 	else
 		echo -ne "\n\n\t${bold}${cyan}<|[+]|> ${end}${red}cOd3 ${cyan}d0n3!!\n\n"
 	fi
 
-	fonts && clipmenu && firefox_esr && htb-Xplorer && nvim && zsh_Plugins && dotfiles
+	fonts && clipmenu && firefox_esr && Chrome && rustScan && htb-Xplorer && nvim && zsh_Plugins && dotfiles
 }
 
 ################################################################################################################
@@ -583,10 +658,9 @@ if [ "$answer" != "${answer#[y/Y]}" ]; then
 		fi
 
 	elif  [[ $OS = arch ]]; then
-
 		echo -e "\n\n\t${blue}${bold}======= ${cyan}Still in development for ${bold}${yellow}Arch ${cyan}Distro ${end}${blue}======= \n\n" && sleep 1 && exit 1
-	elif  [[ $OS = fedora ]]; then
 
+	elif  [[ $OS = fedora ]]; then
 		echo -e "\n\n\t${blue}${bold}======= ${cyan}Still in development for ${bold}${yellow}v ${cyan}Distro ${end}${blue}======= \n\n" && sleep 1 && exit 1
 	fi
 
@@ -604,5 +678,5 @@ if [ "$answer" != "${answer#[y/Y]}" ]; then
 elif [ "$answer" != "${answer#[n/N]}" ]; then
 	sleep 0.3 && echo -ne "\n${cyan}<${bold}${black}|${cyan}[${black}!${cyan}]${bold}${black}|${end}${cyan}>${bold}${black}\t~~~>>\t\t${red}Have a ${end}${cyan}Nice ${bold}${red}day${end}${black}!!\t\t${stnd}${red};=)${end}\n\n"
 else
-	sleep 0.3 && echo -ne "\n${cyan}<${bold}${black}|${cyan}[${black}!${cyan}]${bold}${black}|${end}${cyan}>\t${bold}${black}\t~~~>>\t\t${red}Bye${cyan}!!${bold}${black}\t\t<<~~~~${end}\n\n"
+	sleep 0.3 && echo -ne "\n${cyan}<${bold}${black}|${cyan}[${black}!${cyan}]${bold}${black}|${end}${cyan}>\t${bold}${black}\t~~~>>\t\t${red}By3${cyan}!!${bold}${black}\t\t<<~~~~${end}\n\n"
 fi

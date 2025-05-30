@@ -310,6 +310,22 @@ function Google-Chrome(){
 	fi
 }
 
+	# --> Obs Studio
+
+function obs() {
+
+	which obs >/dev/null
+	if [ $? -ne 0 ]; then
+		sudo apt install v4l2loopback-dkms
+		if [ $? -eq 0 ]; then
+			sudo add-apt-repository ppa:obsproject/obs-studio
+			sudo apt update
+			sudo apt install obs-studio
+		fi
+	fi
+
+}
+
 	# --> Firefox-esr
 function firefox_esr() {
 	tput cnorm

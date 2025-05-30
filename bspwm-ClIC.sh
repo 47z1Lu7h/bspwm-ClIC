@@ -26,7 +26,7 @@ declare -r dpnDeb_Picom="libconfig-dev libdbus-1-dev libegl-dev libev-dev libgl-
 declare -r dpnFed_Picom="dbus-devel gcc git libconfig-devel libev-devel libX11-devel libX11-xcb libxcb-devel libGL-devel libEGL-devel libepoxy-devel meson pcre2-devel pixman-devel uthash-devel xcb-util-image-devel xcb-util-renderutil-devel xorg-x11-proto-devel xcb-util-devel"
 declare -r OS=$(cat /etc/*release | grep '^ID*' | awk '{print $NF}' FS='='| tail -n 1)
 declare -r NAME=$(cat /etc/*release | grep '^NAME' | awk '{print $NF}' FS='=' | tr -d '"' | awk '{print $1}')
-declare -r cwd='$(pwd)/dotfiles'
+declare -r cwd="$(pwd)/dotfiles"
 
 	# --> Msg exit when ctrl+c
 function ctrl_c(){
@@ -133,20 +133,25 @@ function compile_Polybar() {
 function clipmenu() {
 	tput cnorm
 
-	echo -ne "\n\t${bold}${cyan}|[+]|> ${green}Cloning Clipmenu${cyan}~~${bold}${cyan}> ${end}${cyan}\n\n\n" && sleep 1
-
-	if  [ $OS = debian ]; then
-		sudo apt-get install -y g++ gcc make python2.7 pkg-config libx11-dev libxkbfile-dev libsecret-1-dev
-	fi
-
-	git clone "https://github.com/cdown/clipmenu.git" && cd clipmenu && make && sudo make install
-	if [ $? -eq 0 ]; then
-		git clone "https://github.com/cdown/clipnotify.git" && cd clipnotify && make && sudo make install
-		if [ $? -eq 0 ]; then
-			cd ../../ && rm -rf clipmenu
-		fi
+	which clipmenu >/dev/null
+	if [ $? -ne 0 ]; then
+		 echo -ne '\n\n\t${bold}${cyan}<|[+]|> ${end}${blue}clipmenu ${cyan}d@n3${red}!!\n\n'
 	else
-		echo -e "\n\n\t${blue}${bold}======= ${cyan}Some Problem ${bold}compiling ${yellow}clipmenu ${cyan} ${end}${blue}======= \n\n" && sleep 1 && exit 1
+		echo -ne "\n\t${bold}${cyan}|[+]|> ${green}Cloning Clipmenu${cyan}~~${bold}${cyan}> ${end}${cyan}\n\n\n" && sleep 1
+
+		if  [ $OS = debian ]; then
+			sudo apt-get install -y g++ gcc make python2.7 pkg-config libx11-dev libxkbfile-dev libsecret-1-dev
+		fi
+
+		git clone "https://github.com/cdown/clipmenu.git" && cd clipmenu && make && sudo make install
+		if [ $? -eq 0 ]; then
+		git clone "https://github.com/cdown/clipnotify.git" && cd clipnotify && make && sudo make install
+			if [ $? -eq 0 ]; then
+				cd ../../ && rm -rf clipmenu
+			fi
+		else
+			echo -e "\n\n\t${blue}${bold}======= ${cyan}Some Problem ${bold}compiling ${yellow}clipmenu ${cyan} ${end}${blue}======= \n\n" && sleep 1 && exit 1
+		fi
 	fi
 
 	tput civis
@@ -273,10 +278,15 @@ function rust-Cargo() {
 }
 
 function telegram() {
-	wget "https://github.com/telegramdesktop/tdesktop/releases/download/v5.13.1/tsetup.5.13.1.tar.xz" && tar -xf tsetup.5.13.1.tar.xz && rm -r tsetup*
-	sudo cp Telegram/Telegram /usr/bin/telegram && sudo cp Telegram/Updater  /usr/bin/telegram-Updater
+        which telegram >/dev/null
         if [ $? -eq 0 ]; then
-		rm -r Telegram/
+		 echo -ne '\n\n\t${bold}${cyan}<|[+]|> ${end}${blue}Chrome ${cyan}d@n3!!\n\n'
+	else
+		wget "https://github.com/telegramdesktop/tdesktop/releases/download/v5.13.1/tsetup.5.13.1.tar.xz" && tar -xf tsetup.5.13.1.tar.xz && rm -r tsetup*
+		sudo cp Telegram/Telegram /usr/bin/telegram && sudo cp Telegram/Updater  /usr/bin/telegram-Updater
+	        if [ $? -eq 0 ]; then
+			rm -r Telegram/
+		fi
 	fi
 }
 
@@ -320,12 +330,14 @@ function obs() {
 
 	which obs >/dev/null
 	if [ $? -ne 0 ]; then
-		sudo apt install v4l2loopback-dkms
+		sudo apt install -y v4l2loopback-dkms
 		if [ $? -eq 0 ]; then
 			sudo add-apt-repository ppa:obsproject/obs-studio
 			sudo apt update
-			sudo apt install obs-studio
+			sudo apt install -y obs-studio
 		fi
+	else
+		 echo -ne '\n\n\t${bold}${cyan}<|[+]|> ${end}${blue}obs ${cyan}d@n3${red}!!\n\n'
 	fi
 
 }
@@ -518,11 +530,11 @@ function dotfiles(){
 
 	sudo cp -r $cwd/misc/usr/share/* /usr/share/
 	mv $HOME/.zshrc $HOME/.zshrc.OLD
-	cp -r $cwd/misc/home/.*? $HOME/
+	cp -r $cwd/misc/home/.*? $HOME
 	sudo sed -i "s/bash/zsh/g" /etc/passwd
-	sudo ln -sf $HOME/.zsh /root
-	sudo ln -sf $HOME/.zshrc /root
-	sudo ln -sf $HOME/.p10k.zsh /root
+	sudo ln -s -f $HOME/.zsh /root
+	sudo ln -s -f $HOME/.zshrc /root
+	sudo ln -s -f $HOME/.p10k.zsh /root
 	if [ $? -eq 0 ]; then
 		echo -ne "\n\t${bold}${black}󰧟${end}${cyan}Dotfiles ${yellow}\t ${bold}\t${green}Done${white}! ${bold}${green} ${end}\n\n"
 	fi
@@ -552,7 +564,7 @@ function main(){
 			fi
 		fi
 	else
-		echo -ne "\n\n\t${bold}${cyan}<|[+]|> ${end}${red}p1C0m ${cyan}d0n3!!\n\n"
+		echo -ne "\n\n\t${bold}${cyan}<|[+]|> ${end}${red}p1C0m ${cyan}d0n3${red}!!\n\n"
 	fi
 
 	which bspwm >/dev/null 2>&1
@@ -576,7 +588,7 @@ function main(){
 			fi
 		fi
 	else
-		echo -ne "\n\n\t${bold}${cyan}<|[+]|> ${end}${red}b5pWm ${cyan}d0n3!!\n\n"
+		echo -ne "\n\n\t${bold}${cyan}<|[+]|> ${end}${red}b5pWm ${cyan}d0n3${red}!!\n\n"
 	fi
 
 	which polybar >/dev/null 2>&1
@@ -600,14 +612,14 @@ function main(){
 			fi
 		fi
 	else
-		echo -ne "\n\n\t${bold}${cyan}<|[+]|> ${end}${red}p0ly ${cyan}d0n3!!\n\n"
+		echo -ne "\n\n\t${bold}${cyan}<|[+]|> ${end}${red}p0ly ${cyan}d0n3${red}!!\n\n"
 	fi
 
 	which lsd >/dev/null 2>&1
 	if [ $? -ne 0 ]; then
 		lsd
 	else
-		echo -ne "\n\n\t${bold}${cyan}<|[+]|> ${end}${red}l5d ${cyan}d0n3!!\n\n"
+		echo -ne "\n\n\t${bold}${cyan}<|[+]|> ${end}${red}l5d ${cyan}d0n3${red}${red}!!\n\n"
 	fi
 
 	which code >/dev/null 2>&1
@@ -615,10 +627,10 @@ function main(){
 		visual
 #		code
 	else
-		echo -ne "\n\n\t${bold}${cyan}<|[+]|> ${end}${red}cOd3 ${cyan}d0n3!!\n\n"
+		echo -ne "\n\n\t${bold}${cyan}<|[+]|> ${end}${red}cOd3 ${cyan}d0n3${red}!!\n\n"
 	fi
 
-	fonts && clipmenu && Telegram && firefox_esr && Chrome && rustScan && htb-Xplorer && nvim && zsh_Plugins && dotfiles
+	obs && fonts && clipmenu && firefox_esr && Chrome && rustScan && htb-Xplorer && nvim && zsh_Plugins && telegram && dotfiles
 }
 
 ################################################################################################################

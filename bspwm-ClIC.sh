@@ -26,7 +26,7 @@ declare -r dpnDeb_Picom="libconfig-dev libdbus-1-dev libegl-dev libev-dev libgl-
 declare -r dpnFed_Picom="dbus-devel gcc git libconfig-devel libev-devel libX11-devel libX11-xcb libxcb-devel libGL-devel libEGL-devel libepoxy-devel meson pcre2-devel pixman-devel uthash-devel xcb-util-image-devel xcb-util-renderutil-devel xorg-x11-proto-devel xcb-util-devel"
 declare -r OS=$(cat /etc/*release | grep '^ID*' | awk '{print $NF}' FS='='| tail -n 1)
 declare -r NAME=$(cat /etc/*release | grep '^NAME' | awk '{print $NF}' FS='=' | tr -d '"' | awk '{print $1}')
-declare -r cwd="$(pwd)/dotfiles"
+declare -r cwd='$(pwd)/dotfiles'
 
 	# --> Msg exit when ctrl+c
 function ctrl_c(){
@@ -36,7 +36,7 @@ function ctrl_c(){
 
 trap ctrl_c INT
 
-# --> Check if stdout is a terminal...
+# --> Check if stdout is a terminal
 if test -t 1; then
     ncolors=$(tput colors)
 
@@ -274,6 +274,10 @@ function rust-Cargo() {
 
 function telegram() {
 	wget "https://github.com/telegramdesktop/tdesktop/releases/download/v5.13.1/tsetup.5.13.1.tar.xz" && tar -xf tsetup.5.13.1.tar.xz && rm -r tsetup*
+	sudo cp Telegram/Telegram /usr/bin/telegram && sudo cp Telegram/Updater  /usr/bin/telegram-Updater
+        if [ $? -eq 0 ]; then
+		rm -r Telegram/
+	fi
 }
 
 	# --> Google-Chrome
@@ -517,8 +521,8 @@ function dotfiles(){
 	cp -r $cwd/misc/home/.*? $HOME/
 	sudo sed -i "s/bash/zsh/g" /etc/passwd
 	sudo ln -sf $HOME/.zsh /root
-	sudo ln -s -f $HOME/.zshrc /root
-	sudo ln -s -f $HOME/.p10k.zsh /root
+	sudo ln -sf $HOME/.zshrc /root
+	sudo ln -sf $HOME/.p10k.zsh /root
 	if [ $? -eq 0 ]; then
 		echo -ne "\n\t${bold}${black}󰧟${end}${cyan}Dotfiles ${yellow}\t ${bold}\t${green}Done${white}! ${bold}${green} ${end}\n\n"
 	fi
@@ -608,13 +612,13 @@ function main(){
 
 	which code >/dev/null 2>&1
 	if [ $? -ne 0 ]; then
-#		visual
-		code
+		visual
+#		code
 	else
 		echo -ne "\n\n\t${bold}${cyan}<|[+]|> ${end}${red}cOd3 ${cyan}d0n3!!\n\n"
 	fi
 
-	fonts && clipmenu && firefox_esr && Chrome && rustScan && htb-Xplorer && nvim && zsh_Plugins && dotfiles
+	fonts && clipmenu && Telegram && firefox_esr && Chrome && rustScan && htb-Xplorer && nvim && zsh_Plugins && dotfiles
 }
 
 ################################################################################################################

@@ -624,8 +624,8 @@ function main(){
 
 	which code >/dev/null 2>&1
 	if [ $? -ne 0 ]; then
-		visual
-#		code
+#		visual
+		code
 	else
 		echo -ne "\n\n\t${bold}${cyan}<|[+]|> ${end}${red}cOd3 ${cyan}d0n3${red}!!\n\n"
 	fi

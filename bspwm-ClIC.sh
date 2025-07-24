@@ -16,7 +16,7 @@ echo -ne "\t\t\t${red}${bold}
 }
 
 # --> Globals
-declare -r packages="slop wmctrl pulseaudio-utils playerctl zsh rofi kitty git jq cmake npm g++ gettext feh dash bat meson wget curl xclip net-tools openvpn html2text fzf rlwrap gpick trash-cli brightnessctl jsbeautifier lxappearance ranger suckless-tools xsel qt5ct libxfixes-dev"
+declare -r packages="slop wmctrl pulseaudio-utils playerctl zsh rofi kitty git jq cmake npm g++ gettext feh dash bat meson wget curl xclip net-tools openvpn html2text fzf rlwrap gpick trash-cli brightnessctl jsbeautifier lxappearance ranger suckless-tools xsel qt5ct libxfixes-dev seclists"
 declare -r dpnArch_Bspwm="libxcb xcb-util xcb-util-wm xcb-util-keysyms"
 declare -r dpnDeb_Bspwm="libxcb-xinerama0-dev libxcb-icccm4-dev libxcb-randr0-dev libxcb-util0-dev libxcb-ewmh-dev libxcb-keysyms1-dev libxcb-shape0-dev"
 declare -r dpnFed_Bspwm="libxcb xcb-util xcb-util-wm xcb-util-keysyms libxcb-devel xcb-util-wm-devel xcb-util-keysyms-devel xcb-util-devel"

@@ -61,7 +61,7 @@ function fonts(){
 	tput cnorm
 	declare -a fonts=( ShareTechMono IosevkaTermSlab DaddyTimeMono Iosevka )
 
-	version='3.2.1'
+	version='3.4.0'
         fonts_Path="/usr/share/fonts/nerd_fonts"
 
         if [[ ! -d "$fonts_Path" ]]; then
